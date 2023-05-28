@@ -9,7 +9,11 @@
     "dev": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "publish": "electron-forge publish",
+    "stylelint": "npx stylelint '**/*.less'",
+    "stylelint:fix": "npx stylelint '**/*.less' --fix",
+    "lint": "npx eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint:fix": "npx eslint --ext .js,.jsx,.ts,.tsx . --fix"
   },
   "keywords": [
     "原神",
@@ -37,14 +41,22 @@
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.4",
     "electron": "^24.4.0",
+    "eslint": "^8.41.0",
     "less-loader": "^11.1.0",
     "node-loader": "^2.0.0",
-    "style-loader": "^3.3.3"
+    "postcss-less": "^6.0.0",
+    "style-loader": "^3.3.3",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard-less": "^1.0.0"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "electron-store": "^8.1.0",
+    "icons": "^1.0.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.2"
   }
 }

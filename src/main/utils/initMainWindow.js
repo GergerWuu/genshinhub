@@ -7,8 +7,8 @@ import initStore from './initStore';
 
 const WINDOW_OPTIONS = {
   icon: '',
-  width: 970,
-  height: 600,
+  width: 1168,
+  height: 720,
   show: false,
   frame: false,
   resizable: false,
@@ -46,6 +46,8 @@ const initMainWIndow = () => {
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   initIPC();
+
+  global.mainWindow = mainWindow;
 
   return mainWindow;
 };

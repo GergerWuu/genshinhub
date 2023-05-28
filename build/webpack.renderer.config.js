@@ -5,7 +5,7 @@ module.exports = {
     rules: [
       ...rules,
       {
-        test: /\.(svg|jpg|jpeg|png|ico|gif|woff2)$/i,
+        test: /\.(svg|jpg|jpeg|png|ico|gif|woff2|webp)$/i,
         type: 'asset/inline',
       },
       {
@@ -13,7 +13,11 @@ module.exports = {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       },
       {
-        test: /\.less$/i,
+        test: /(?<!\.module)\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader'],
+      },
+      {
+        test: /(?<=\.module)\.less$/,
         use: [
           'style-loader',
           {

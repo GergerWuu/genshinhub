@@ -1,1 +1,2 @@
-export { default as getAppInfo } from './getAppInfo';
+export * from './app';
+export * from './win';

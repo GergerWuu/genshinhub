@@ -1,0 +1,19 @@
+@import url('@renderer/less/utils.less');
+
+.btn {
+  .flex-both-center();
+
+  width: fit-content;
+  padding: 8px;
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+
+  .icon {
+    font-size: var(--icon-size-lg);
+    color: var(--color-text-amplifed);
+  }
+
+  &:hover {
+    background: var(--color-background-transparent-hover);
+  }
+}

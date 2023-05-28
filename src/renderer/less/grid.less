@@ -1,0 +1,14 @@
+@grid-columns: 24;
+@grid-gutter: 24px;
+
+.generateGrid(@columns) when (@columns <= @grid-columns) {
+  .col-@{columns} {
+    margin-left: calc(@grid-gutter / 2);
+    margin-right: calc(@grid-gutter / 2);
+    width: calc((100vw / @grid-columns) * @columns - @grid-gutter);
+  }
+
+  .generateGrid(@columns + 2);
+}
+
+.generateGrid(2);

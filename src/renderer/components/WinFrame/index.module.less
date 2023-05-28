@@ -1,0 +1,60 @@
+@import url('@renderer/less/utils.less');
+@import url('@renderer/less/grid.less');
+
+.frame {
+  .cursor();
+
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    cursor: default;
+
+    .flex-between-center();
+
+    padding: 12px 0;
+    background: linear-gradient(
+      rgb(0 0 0 / 75%) 0%,
+      rgb(0 0 0 / 25%) 65%,
+      rgb(0 0 0 / 0%)
+    );
+
+    & > * {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .title-container {
+      .flex-start-center();
+
+      flex: 1;
+      -webkit-app-region: drag;
+
+      .icon {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--border-radius-default);
+        opacity: 0.85;
+      }
+
+      .title {
+        margin-left: 8px;
+        margin-right: auto;
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text-amplifed);
+      }
+    }
+
+    .btn-container {
+      .flex-both-center();
+
+      .btn:not(:last-of-type) {
+        margin-right: 8px;
+      }
+    }
+  }
+}
