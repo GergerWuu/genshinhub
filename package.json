@@ -1,0 +1,50 @@
+{
+  "name": "genshinhub",
+  "productName": "genshinhub",
+  "private": true,
+  "version": "1.0.0",
+  "description": "原神百宝箱",
+  "main": ".webpack/main",
+  "scripts": {
+    "dev": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "keywords": [
+    "原神",
+    "原神百宝箱",
+    "genshin",
+    "genshinhub"
+  ],
+  "author": {
+    "name": "gergerwuu",
+    "email": "gergerwuu@gamil.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/plugin-proposal-decorators": "^7.22.0",
+    "@babel/preset-react": "^7.22.0",
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "@electron-forge/plugin-webpack": "^6.1.1",
+    "@gergerwuu/eslint-config": "^1.0.0",
+    "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.4",
+    "electron": "^24.4.0",
+    "less-loader": "^11.1.0",
+    "node-loader": "^2.0.0",
+    "style-loader": "^3.3.3"
+  },
+  "dependencies": {
+    "electron-store": "^8.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
+  }
+}
