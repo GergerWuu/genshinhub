@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { api } from '@src/renderer/utils';
-import { toLocale } from '@src/utils';
 import icon from '@assets/icon.png';
-import WinButton from '@renderer/components/WinButton';
+import { api } from '@renderer/utils';
+import { toLocale } from '@utils';
 
+import UserButton from './UserButton';
+import WinButton from './WinButton';
 import style from './index.module.less';
 
 const WinFrame = ({ name, isBeta, version, children }) => {
@@ -24,6 +25,7 @@ const WinFrame = ({ name, isBeta, version, children }) => {
             )}
           </h1>
         </div>
+        <UserButton />
         <div className={style.btnContainer}>
           <WinButton
             className={style.btn}

@@ -5,7 +5,6 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@src/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
       "@constants/*": ["src/constants/*"],
       "@locales/*": ["src/locales/*"],

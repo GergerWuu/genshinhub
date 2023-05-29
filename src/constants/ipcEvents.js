@@ -1,7 +1,10 @@
 const IPC_EVENTS = {
-  getAppInfo: 'GET_APP_INFO',
-  closeApp: 'CLOSE_APP',
-  minimizeWin: 'MINIMIZE_WIN',
+  getAppInfo: 'getAppInfo',
+  closeApp: 'closeApp',
+  minimizeWin: 'minimizeWin',
+  openLoginWindow: 'openLoginWindow',
+  getMYSCookie: 'getMYSCookie',
+  mysCookieChange: 'mysCookieChange',
 };
 
 export default IPC_EVENTS;

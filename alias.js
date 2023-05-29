@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  '@src': path.resolve(__dirname, 'src'),
   '@assets': path.resolve(__dirname, 'src/assets'),
   '@constants': path.resolve(__dirname, 'src/constants'),
   '@locales': path.resolve(__dirname, 'src/locales'),

@@ -1,13 +1,18 @@
 import React from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
-import { PAGE_URL } from '@src/constants';
+import { PAGE_URL } from '@constants';
 import Home from '@renderer/containers/Home';
+import Login from '@renderer/containers/Login';
 
 const routesMap = [
   {
     path: PAGE_URL.home,
     component: Home,
+  },
+  {
+    path: PAGE_URL.login,
+    component: Login,
   },
 ];
 

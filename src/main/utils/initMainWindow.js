@@ -24,6 +24,7 @@ const initMainWIndow = () => {
 
   const mainWindow = new BrowserWindow(WINDOW_OPTIONS);
 
+  mainWindow.removeMenu();
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
   });
