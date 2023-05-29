@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 
 import { WinFrame } from '@renderer/components';
 import { MainStoreProvider } from '@renderer/context/MainStoreContext';
+import { StoreProvider } from '@renderer/stores';
 import { api } from '@renderer/utils';
 
 import Router from './Router';
@@ -16,11 +17,13 @@ const render = () => {
 
     root.render(
       <HashRouter>
-        <MainStoreProvider>
-          <WinFrame {...info}>
-            <Router />
-          </WinFrame>
-        </MainStoreProvider>
+        <StoreProvider>
+          <MainStoreProvider>
+            <WinFrame {...info}>
+              <Router />
+            </WinFrame>
+          </MainStoreProvider>
+        </StoreProvider>
       </HashRouter>
     );
   });

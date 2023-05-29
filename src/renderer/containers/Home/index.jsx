@@ -1,10 +1,26 @@
 import React from 'react';
+import { observer } from 'mobx-react-lite';
 
-import { useMainStore } from '@renderer/context/MainStoreContext';
+import { useStores } from '@renderer/stores';
 
 const Home = () => {
-  const { cookie } = useMainStore();
-  return <section>{cookie}</section>;
+  const { userStore } = useStores();
+  const { computedCurrentUserInfo } = userStore;
+
+  return (
+    <section>
+      <ul>
+        {Object.keys(computedCurrentUserInfo).map((key) => {
+          return (
+            <li style={{ display: 'flex' }} key={key}>
+              <div>{key}</div>
+              <div>{computedCurrentUserInfo[key]}</div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
 };
 
-export default Home;
+export default observer(Home);

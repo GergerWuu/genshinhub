@@ -1,15 +1,18 @@
 import React from 'react';
-
 // import { useNavigate } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import { AiOutlineUser } from 'react-icons/ai';
 
 import IfElse from '@renderer/components/IfElse';
+import { useStores } from '@renderer/stores';
 import { api } from '@renderer/utils';
 import { toLocale } from '@utils';
 
 import style from './index.module.less';
 
 const UserButton = () => {
-  const isLogin = false;
+  const { userStore } = useStores();
+  const { currentUid, computedIsLogin } = userStore;
 
   // const navi = useNavigate();
 
@@ -21,12 +24,17 @@ const UserButton = () => {
       }}
     >
       <IfElse
-        bool={isLogin}
-        if={<span>uid</span>}
+        bool={computedIsLogin}
+        if={
+          <div className={style.uidContainer}>
+            <AiOutlineUser className={style.icon} />
+            <span>{currentUid}</span>
+          </div>
+        }
         else={<span>{toLocale('frame_header_userbtn_login')}</span>}
       />
     </div>
   );
 };
 
-export default UserButton;
+export default observer(UserButton);

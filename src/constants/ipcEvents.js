@@ -5,6 +5,7 @@ const IPC_EVENTS = {
   openLoginWindow: 'openLoginWindow',
   getMYSCookie: 'getMYSCookie',
   mysCookieChange: 'mysCookieChange',
+  getUserList: 'getUserList',
 };
 
 export default IPC_EVENTS;

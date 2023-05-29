@@ -9,6 +9,9 @@ const apis = {
   getMYSCookie: () => {
     return ipcRenderer.invoke(IPC_EVENTS.getMYSCookie);
   },
+  getUserList: () => {
+    return ipcRenderer.invoke(IPC_EVENTS.getUserList);
+  },
 
   closeApp: () => {
     return ipcRenderer.send(IPC_EVENTS.closeApp);
