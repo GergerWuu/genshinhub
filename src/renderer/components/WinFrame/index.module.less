@@ -9,6 +9,7 @@
   user-select: none;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   .header {
     cursor: default;
@@ -55,6 +56,23 @@
       .btn:not(:last-of-type) {
         margin-right: 8px;
       }
+    }
+  }
+
+  .main {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+
+    .flex-start-stretch();
+
+    .nav {
+      height: 100%;
+    }
+
+    .content {
+      height: 100%;
+      flex: 1;
     }
   }
 }

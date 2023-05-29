@@ -1,10 +1,12 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import icon from '@assets/icon.png';
 import { api } from '@renderer/utils';
 import { toLocale } from '@utils';
 
+import Nav from './Nav';
 import UserButton from './UserButton';
 import WinButton from './WinButton';
 import style from './index.module.less';
@@ -39,7 +41,12 @@ const WinFrame = ({ name, isBeta, version, children }) => {
           />
         </div>
       </header>
-      <div className={style.content}>{children}</div>
+      <main className={style.main}>
+        <div className={classNames(style.nav)}>
+          <Nav />
+        </div>
+        <div className={style.content}>{children}</div>
+      </main>
     </div>
   );
 };

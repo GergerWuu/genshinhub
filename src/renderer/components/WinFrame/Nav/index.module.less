@@ -1,0 +1,24 @@
+@import url('@renderer/less/utils.less');
+
+@width-default: 56px;
+@width-expanded: 124px;
+
+.nav {
+  width: @width-default;
+  height: 100%;
+  padding: 8px;
+  background: var(--color-background-1);
+  border-radius: var(--border-radius-default);
+
+  .transition();
+
+  &:hover {
+    width: @width-expanded;
+  }
+
+  .btn {
+    &:not(:first-of-type) {
+      margin-top: 8px;
+    }
+  }
+}

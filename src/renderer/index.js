@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
 import { WinFrame } from '@renderer/components';
@@ -14,11 +15,13 @@ const render = () => {
     const root = createRoot(document.getElementById('app'));
 
     root.render(
-      <MainStoreProvider>
-        <WinFrame {...info}>
-          <Router />
-        </WinFrame>
-      </MainStoreProvider>
+      <HashRouter>
+        <MainStoreProvider>
+          <WinFrame {...info}>
+            <Router />
+          </WinFrame>
+        </MainStoreProvider>
+      </HashRouter>
     );
   });
 };

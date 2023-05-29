@@ -1,9 +1,9 @@
 import React from 'react';
 
-// import { PAGE_URL } from '@constants';
+// import { useNavigate } from 'react-router-dom';
+
 import IfElse from '@renderer/components/IfElse';
 import { api } from '@renderer/utils';
-// import { openPage } from '@renderer/utils/link';
 import { toLocale } from '@utils';
 
 import style from './index.module.less';
@@ -11,11 +11,12 @@ import style from './index.module.less';
 const UserButton = () => {
   const isLogin = false;
 
+  // const navi = useNavigate();
+
   return (
     <div
       className={style.btn}
       onClick={() => {
-        // openPage({ page: PAGE_URL.login });
         api.openLoginWindow();
       }}
     >

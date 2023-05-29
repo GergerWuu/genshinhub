@@ -1,0 +1,40 @@
+@import url('@renderer/less/utils.less');
+
+.btn {
+  .flex-start-center();
+
+  padding: var(--btn-padding-default);
+  border-radius: var(--border-radius-default);
+  background: var(--color-background-1);
+  overflow: hidden;
+
+  .icon {
+    font-size: var(--icon-size-default);
+    color: var(--color-text-amplifed);
+    flex-shrink: 0;
+  }
+
+  .text {
+    margin-left: 8px;
+    white-space: nowrap;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+  }
+
+  .focus-style() {
+    background: var(--color-background-transparent-hover);
+  }
+
+  &:hover {
+    .focus-style();
+  }
+
+  &.focus {
+    .focus-style();
+
+    .icon,
+    .text {
+      color: var(--color-branded-primary);
+    }
+  }
+}
