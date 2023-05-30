@@ -1,3 +1,4 @@
-export * from './tools/toLocale';
-export * from './tools/types';
-export * from './tools/cookie';
+export * from './toLocale';
+export * from './types';
+export * from './number';
+export * from './uid';

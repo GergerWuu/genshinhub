@@ -12,19 +12,19 @@ class UserStore {
   currentUid = '';
 
   getUserList() {
-    api.getUserList().then((list) => {
+    api.getUserList().then(({ retcode, message, data }) => {
       runInAction(() => {
-        this.userList = list;
-        this.currentUid = list?.[0]?.game_uid;
+        this.userList = data.list;
+        this.currentUid = data?.list?.[0]?.game_uid; // todo filter is_chosen
       });
     });
   }
 
-  get computedIsLogin() {
+  get isLogin() {
     return !!this.currentUid;
   }
 
-  get computedUserObj() {
+  get userObj() {
     const userObj = {};
     this.userList.forEach((user) => {
       userObj[user.game_uid] = user;
@@ -32,8 +32,8 @@ class UserStore {
     return userObj;
   }
 
-  get computedCurrentUserInfo() {
-    return this.computedUserObj?.[this.currentUid] ?? {};
+  get currentUserInfo() {
+    return this.userObj?.[this.currentUid] ?? {};
   }
 }
 

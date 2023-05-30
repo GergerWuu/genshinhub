@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 
 import { useStores } from '@renderer/stores';
 
 const Home = () => {
-  const { userStore } = useStores();
-  const { computedCurrentUserInfo } = userStore;
+  const { userStore, dailyNoteStore } = useStores();
+  const { currentUid } = userStore;
+  const { hasLoadDailyNote, dailyNote } = dailyNoteStore;
+
+  useEffect(() => {
+    if (currentUid && !hasLoadDailyNote) {
+      dailyNoteStore.getDailyNote();
+    }
+  }, [dailyNoteStore, hasLoadDailyNote, currentUid]);
 
   return (
     <section>
       <ul>
-        {Object.keys(computedCurrentUserInfo).map((key) => {
+        {Object.entries(dailyNote).map(([key, value]) => {
           return (
             <li style={{ display: 'flex' }} key={key}>
-              <div>{key}</div>
-              <div>{computedCurrentUserInfo[key]}</div>
+              <div style={{ width: 300 }}>{key}</div>
+              <div>{JSON.stringify(value)}</div>
             </li>
           );
         })}

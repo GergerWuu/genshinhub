@@ -6,6 +6,7 @@ const IPC_EVENTS = {
   getMYSCookie: 'getMYSCookie',
   mysCookieChange: 'mysCookieChange',
   getUserList: 'getUserList',
+  getDailyNote: 'getDailyNote',
 };
 
 export default IPC_EVENTS;

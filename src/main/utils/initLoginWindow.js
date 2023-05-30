@@ -2,7 +2,7 @@ import { BrowserWindow, session } from 'electron';
 
 import { LINK_MYS_LOGIN, STORE_KEY, UA_MOBILE } from '@constants';
 import global from '@main/global';
-import { changeCookiesToString, checkCookies } from '@utils';
+import { changeCookiesToString, checkCookies } from '@main/utils';
 
 const initLoginWindow = () => {
   const loginWindow = new BrowserWindow({

@@ -8,7 +8,7 @@ import {
   openLoginWindow,
   getMYSCookie,
 } from '@main/ipc';
-import { getUserList } from '@main/service';
+import { getUserList, getDailyNote } from '@main/service';
 
 const initIPC = () => {
   ipcMain.on(IPC_EVENTS.closeApp, closeApp);
@@ -18,6 +18,9 @@ const initIPC = () => {
   ipcMain.handle(IPC_EVENTS.getAppInfo, getAppInfo);
   ipcMain.handle(IPC_EVENTS.getMYSCookie, getMYSCookie);
   ipcMain.handle(IPC_EVENTS.getUserList, getUserList);
+  ipcMain.handle(IPC_EVENTS.getDailyNote, (_, uid) => {
+    return getDailyNote(uid);
+  });
 };
 
 export default initIPC;

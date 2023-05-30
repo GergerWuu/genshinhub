@@ -12,6 +12,9 @@ const apis = {
   getUserList: () => {
     return ipcRenderer.invoke(IPC_EVENTS.getUserList);
   },
+  getDailyNote: (...props) => {
+    return ipcRenderer.invoke(IPC_EVENTS.getDailyNote, ...props);
+  },
 
   closeApp: () => {
     return ipcRenderer.send(IPC_EVENTS.closeApp);

@@ -2,7 +2,7 @@ import React from 'react';
 import { HiUserGroup, HiHome } from 'react-icons/hi2';
 
 import PAGE_URL from '@constants/pageUrl';
-import { toLocale } from '@utils/index';
+import { toLocale } from '@utils';
 
 import Button from './Button';
 import style from './index.module.less';

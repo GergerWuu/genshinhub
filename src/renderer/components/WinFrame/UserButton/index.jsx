@@ -12,7 +12,7 @@ import style from './index.module.less';
 
 const UserButton = () => {
   const { userStore } = useStores();
-  const { currentUid, computedIsLogin } = userStore;
+  const { currentUid, isLogin } = userStore;
 
   // const navi = useNavigate();
 
@@ -24,7 +24,7 @@ const UserButton = () => {
       }}
     >
       <IfElse
-        bool={computedIsLogin}
+        bool={isLogin}
         if={
           <div className={style.uidContainer}>
             <AiOutlineUser className={style.icon} />
