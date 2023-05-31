@@ -7,8 +7,8 @@ import initStore from './initStore';
 
 const WINDOW_OPTIONS = {
   icon: '',
-  width: 1168,
-  height: 720,
+  width: 1128,
+  height: 752,
   show: false,
   frame: false,
   resizable: false,

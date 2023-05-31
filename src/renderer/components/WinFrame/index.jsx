@@ -41,12 +41,12 @@ const WinFrame = ({ name, isBeta, version, children }) => {
           />
         </div>
       </header>
-      <main className={style.main}>
+      <div className={style.main}>
         <div className={classNames(style.nav)}>
           <Nav />
         </div>
         <div className={style.content}>{children}</div>
-      </main>
+      </div>
     </div>
   );
 };
